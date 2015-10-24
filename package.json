@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/asonnenschein/arizonafieldguide",
   "dependencies": {
-    "hapi": "11.0.2" 
+    "good": "^6.4.0",
+    "good-console": "^5.1.0",
+    "hapi": "^11.0.2",
+    "inert": "^3.1.0"
   }
 }
