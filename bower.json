@@ -1,0 +1,26 @@
+{
+  "name": "arizonafieldguide",
+  "description": "Catalog of interesting places around Arizona.",
+  "main": "index.js",
+  "authors": [
+    "Adrian Sonnenschein"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/asonnenschein/arizonafieldguide",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/assets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.7",
+    "bootstrap": "3.3.5",
+    "jquery": "2.1.4",
+    "leaflet": "0.7.5"
+  }
+}
