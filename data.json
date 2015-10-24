@@ -1,0 +1,53 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-110.989556, 32.260818]
+      },
+      "properties": {
+        "city": "tucson",
+        "title": "Amazon Motel",
+        "image": "/images/tucson/amazonmotel.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-110.985392, 32.260749]
+      },
+      "properties": {
+        "city": "tucson",
+        "title": "Ghost Ranch Motor Lodge",
+        "image": "/images/tucson/ghostranch.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-110.972228, 32.239836]
+      },
+      "properties": {
+        "city": "tucson",
+        "title": "Sparkle Cleaners",
+        "image": "/images/tucson/sparklecleaners.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-110.983002, 32.260587]
+      },
+      "properties": {
+        "city": "tucson",
+        "title": "Wayward Winds Lodge",
+        "image": "/images/tucson/waywardwinds.jpg"
+      }
+    }
+  ]
+}

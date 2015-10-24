@@ -9,23 +9,59 @@ server = new Hapi.Server();
 
 server.connection({ port: 3030 });
 
-server.route({
-  method: 'GET',
-  path: '/images/{image}',
-  handler: function (request, reply) {
+server.register(Inert, function (error) {
 
+  if (error) {
+    throw error;
   }
-});
 
-server.route({
-  method: 'GET',
-  path: '/',
-  handler: function (request, reply) {
-    reply.file('./public/index.html');
-  }
-});
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
+      reply.file('./public/index.html');
+    }
+  });
 
-server.register({ register: Inert });
+  server.route({
+    method: 'GET',
+    path: '/images/{param*}',
+    handler: {
+      directory: {
+        path: 'public/images'
+      }
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/data.json',
+    handler: function (request, reply) {
+      reply.file('./data.json');
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/assets/{param*}',
+    handler: {
+      directory: {
+        path: 'public/assets'
+      }
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/dist/{param*}',
+    handler: {
+      directory: {
+        path: 'public/src'
+      }
+    }
+  });
+
+});
 
 server.register({
   register: Good,
