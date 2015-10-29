@@ -7,24 +7,33 @@
     .controller('FieldGuideController', [
       '$scope',
       '$routeParams',
-      '$http',
       FieldGuideController
     ])
   ;
 
   function FieldGuideController ($scope, $routeParams, $http) {
-
+    function selectedData () {
+      return {
+        "type": $scope.fieldGuideData.type,
+        "features": $scope.fieldGuideData.features.filter(function (x) {
+          return x.properties.city === $routeParams.city;
+        })
+      }
+    }
+    $scope.selectedData = selectedData();
   }
 
   angular
     .module('azFieldGuide')
     .controller('MapController', [
       '$scope',
+      '$routeParams',
+      'leafletData',
       MapController
     ])
   ;
 
-  function MapController ($scope) {
+  function MapController ($scope, $routeParams, leafletData) {
     angular.extend($scope, {
         defaults: {
             tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -36,6 +45,12 @@
             }
         }
     });
+    angular.extend($scope.layers.overlays, {
+      images: {
+        data: $scope.selectedData
+      }
+    });
+    console.log($scope.geojson);
   }
 
   angular
