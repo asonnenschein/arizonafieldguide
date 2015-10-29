@@ -13,28 +13,42 @@
   ;
 
   function FieldGuideController ($scope, $routeParams, $http) {
-    console.log($routeParams);
-    $http.get('/data.json')
-      .success(function (data) {
-        console.log(data);
-      })
-      .error(function (error) {
-        console.throw(error)
-      })
-    ;
+
   }
 
   angular
     .module('azFieldGuide')
-    .controller('InitController', [
-      '$scope'
+    .controller('MapController', [
+      '$scope',
+      MapController
     ])
   ;
 
-  function InitController ($scope) {
-    angular.element(document).ready(function () {
-      console.log('hello world!');
+  function MapController ($scope) {
+    angular.extend($scope, {
+        defaults: {
+            tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            maxZoom: 14,
+            path: {
+                weight: 10,
+                color: '#800000',
+                opacity: 1
+            }
+        }
     });
   }
+
+  angular
+    .module('azFieldGuide')
+    .controller('ContentController', [
+      '$scope',
+      ContentController
+    ])
+  ;
+
+  function ContentController ($scope) {
+
+  }
+
 
 })();
