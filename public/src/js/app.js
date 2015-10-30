@@ -20,7 +20,7 @@
   function configure ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/:city', {
-        templateUrl: 'dist/partials/field-guide.html',
+        templateUrl: 'dist/templates/field-guide.html',
         controller: 'FieldGuideController'
       })
       .otherwise({
@@ -35,10 +35,10 @@
     .run(runblock)
   ;
 
-  runblock.$inject = ['dataFactory'];
+  runblock.$inject = ['FeatureDataFactory'];
 
-  function runblock (dataFactory) {
-    dataFactory.ajaxGetData();
+  function runblock (FeatureDataFactory) {
+    FeatureDataFactory.loadData();
   }
 
 })();

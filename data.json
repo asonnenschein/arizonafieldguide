@@ -8,6 +8,7 @@
         "coordinates": [-110.989556, 32.260818]
       },
       "properties": {
+        "id": "1",
         "city": "tucson",
         "title": "Amazon Motel",
         "image": "/images/tucson/amazonmotel.jpg"
@@ -20,6 +21,7 @@
         "coordinates": [-110.985392, 32.260749]
       },
       "properties": {
+        "id": "2",
         "city": "tucson",
         "title": "Ghost Ranch Motor Lodge",
         "image": "/images/tucson/ghostranch.jpg"
@@ -32,6 +34,7 @@
         "coordinates": [-110.972228, 32.239836]
       },
       "properties": {
+        "id": "3",
         "city": "tucson",
         "title": "Sparkle Cleaners",
         "image": "/images/tucson/sparklecleaners.jpg"
@@ -44,6 +47,7 @@
         "coordinates": [-110.983002, 32.260587]
       },
       "properties": {
+        "id": "4",
         "city": "tucson",
         "title": "Wayward Winds Lodge",
         "image": "/images/tucson/waywardwinds.jpg"

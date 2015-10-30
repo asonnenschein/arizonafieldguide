@@ -7,20 +7,14 @@
     .controller('FieldGuideController', [
       '$scope',
       '$routeParams',
+      'FeatureDataFactory',
       FieldGuideController
     ])
   ;
 
-  function FieldGuideController ($scope, $routeParams, $http) {
-    function selectedData () {
-      return {
-        "type": $scope.fieldGuideData.type,
-        "features": $scope.fieldGuideData.features.filter(function (x) {
-          return x.properties.city === $routeParams.city;
-        })
-      }
-    }
-    $scope.selectedData = selectedData();
+  function FieldGuideController ($scope, $routeParams, FeatureDataFactory) {
+    var city = $routeParams.city;
+    FeatureDataFactory.setFilteredData(city);
   }
 
   angular
@@ -29,11 +23,13 @@
       '$scope',
       '$routeParams',
       'leafletData',
+      'FeatureDataFactory',
+      'ActiveFeatureService',
       MapController
     ])
   ;
 
-  function MapController ($scope, $routeParams, leafletData) {
+  function MapController ($scope, $routeParams, leafletData, FeatureDataFactory, ActiveFeatureService) {
     angular.extend($scope, {
       defaults: {
           tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -45,27 +41,29 @@
           }
       },
       geojson: {
-        data: $scope.selectedData,
+        data: FeatureDataFactory.getFilteredData(),
         pointToLayer: function (feature, latlng) {
           var marker = new L.marker(latlng, {icon: L.icon({
             iconUrl: '/assets/images/marker.png',
             iconSize: [38, 95]
           })});
           marker.on('click', function () {
-            console.log(this.feature.properties);
+            ActiveFeatureService.setActiveFeature(this.feature);
           })
           return marker;
         },
       }
     });
+
     leafletData.getMap().then(function(map) {
-        var latlngs, coord, i;
-        latlngs = [];
-        for (i = 0; i < $scope.selectedData.features.length; i++) {
-          coord  = $scope.selectedData.features[i].geometry.coordinates;
-          latlngs.push(L.GeoJSON.coordsToLatLng(coord));
-        }
-        map.fitBounds(latlngs);
+      var coord, filteredData, i, latlngs;
+      filteredData = FeatureDataFactory.getFilteredData();
+      latlngs = [];
+      for (i = 0; i < filteredData.features.length; i++) {
+        coord  = filteredData.features[i].geometry.coordinates;
+        latlngs.push(L.GeoJSON.coordsToLatLng(coord));
+      }
+      map.fitBounds(latlngs);
     });
   }
 
@@ -73,12 +71,15 @@
     .module('azFieldGuide')
     .controller('ContentController', [
       '$scope',
+      'FeatureDataFactory',
+      'ActiveFeatureService',
       ContentController
     ])
   ;
 
-  function ContentController ($scope) {
-
+  function ContentController ($scope, FeatureDataFactory, ActiveFeatureService) {
+    console.log(ActiveFeatureService.getActiveFeature());
+    $scope.data = ActiveFeatureService.getActiveFeature();
   }
 
 
