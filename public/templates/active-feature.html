@@ -1,1 +1,8 @@
-<img src={{feature.properties.image}} class="feature-image">
+<div class="image">
+    <img src={{feature.properties.image}} class="feature-image">
+    <div class="image-controls">
+        <button class="inner left" ng-click="previousFeature()">Previous</button>
+        <div class="title inner">{{feature.properties.title}}</div>
+        <button class="inner right" ng-click="nextFeature()">Next</button>
+    </div>
+</div>

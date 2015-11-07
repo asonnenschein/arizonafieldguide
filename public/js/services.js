@@ -69,9 +69,41 @@
       return activeFeature;
     }
 
+    function getPreviousFeature (data) {
+      var i, index;
+      for (i = 0; i < data.features.length; i++) {
+        if (data.features[i].properties.id === activeFeature.properties.id) {
+          index = i;
+        }
+      }
+      if (index - 1 < 0) {
+        setActiveFeature(data.features[data.features.length - 1]);
+      }
+      else {
+        setActiveFeature(data.features[index - 1]);
+      }
+    }
+
+    function getNextFeature (data) {
+      var i, index;
+      for (i = 0; i < data.features.length; i++) {
+        if (data.features[i].properties.id === activeFeature.properties.id) {
+          index = i;
+        }
+      }
+      if (index + 1 === data.features.length) {
+        setActiveFeature(data.features[0]);
+      }
+      else {
+        setActiveFeature(data.features[index + 1]);
+      }
+    }
+
     return {
       setActiveFeature: setActiveFeature,
       getActiveFeature: getActiveFeature,
+      getPreviousFeature: getPreviousFeature,
+      getNextFeature: getNextFeature
     }
   }
 

@@ -91,9 +91,21 @@
   ;
 
   function ContentController ($scope, FeatureDataFactory, ActiveFeatureService) {
+
     $scope.$on('activefeature:updated', function (event, data) {
       $scope.feature = data;
     });
+
+    $scope.previousFeature = function () {
+      var features = FeatureDataFactory.getFilteredData();
+      ActiveFeatureService.getPreviousFeature(features);
+    }
+
+    $scope.nextFeature = function () {
+      var features = FeatureDataFactory.getFilteredData();
+      ActiveFeatureService.getNextFeature(features);
+    }
+
   }
 
 
