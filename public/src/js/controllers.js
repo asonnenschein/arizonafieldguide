@@ -63,8 +63,9 @@
         coord  = filteredData.features[i].geometry.coordinates;
         latlngs.push(L.GeoJSON.coordsToLatLng(coord));
       }
-      map.fitBounds(latlngs);
+      map.fitBounds(latlngs, {padding: [50, 50]});
     });
+
   }
 
   angular
@@ -78,8 +79,9 @@
   ;
 
   function ContentController ($scope, FeatureDataFactory, ActiveFeatureService) {
-    console.log(ActiveFeatureService.getActiveFeature());
-    $scope.data = ActiveFeatureService.getActiveFeature();
+    $scope.$on('activefeature:updated', function (event, data) {
+      $scope.feature = data;
+    });
   }
 
 

@@ -11,7 +11,8 @@
     var directive = {
       templateUrl: '/dist/templates/active-feature.html',
       restrict: 'E',
-      controller: 'ContentController'
+      controller: 'ContentController',
+      bindToController: true
     };
     return directive;
   }

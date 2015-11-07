@@ -55,11 +55,14 @@
     .service('ActiveFeatureService', ActiveFeatureService)
   ;
 
-  function ActiveFeatureService () {
+  ActiveFeatureService.$inject = ['$rootScope'];
+
+  function ActiveFeatureService ($rootScope) {
     var activeFeature;
 
     function setActiveFeature (feature) {
-      return activeFeature = feature;
+      activeFeature = feature;
+      return $rootScope.$broadcast('activefeature:updated', activeFeature);
     }
 
     function getActiveFeature () {
@@ -68,7 +71,7 @@
 
     return {
       setActiveFeature: setActiveFeature,
-      getActiveFeature: getActiveFeature
+      getActiveFeature: getActiveFeature,
     }
   }
 

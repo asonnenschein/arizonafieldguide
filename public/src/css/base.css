@@ -7,3 +7,8 @@ html, body {
     color: #FFFFFF;
     border-bottom: none;
 }
+
+img.active-image {
+    height: 600px;
+    width: 600px;
+}
