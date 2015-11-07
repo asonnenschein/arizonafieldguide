@@ -53,10 +53,10 @@ server.register(Inert, function (error) {
 
   server.route({
     method: 'GET',
-    path: '/dist/{param*}',
+    path: '/public/{param*}',
     handler: {
       directory: {
-        path: 'public/src'
+        path: 'public/'
       }
     }
   });

@@ -56,14 +56,26 @@
     });
 
     leafletData.getMap().then(function(map) {
+
       var coord, filteredData, i, latlngs;
       filteredData = FeatureDataFactory.getFilteredData();
       latlngs = [];
+
       for (i = 0; i < filteredData.features.length; i++) {
         coord  = filteredData.features[i].geometry.coordinates;
         latlngs.push(L.GeoJSON.coordsToLatLng(coord));
       }
+
+      if (!ActiveFeatureService.getActiveFeature()) {
+        ActiveFeatureService.setActiveFeature(filteredData.features[0]);
+      }
+
       map.fitBounds(latlngs, {padding: [50, 50]});
+
+      map.on('resize', function () {
+        map.fitBounds(latlngs, {padding: [50, 50]});
+      });
+
     });
 
   }

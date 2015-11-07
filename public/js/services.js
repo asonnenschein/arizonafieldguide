@@ -14,7 +14,7 @@
       , filteredData
     ;
 
-    function loadData () {
+    function loadData (callback) {
       $http.get('data.json')
         .success(function (data) {
           featureData = data;

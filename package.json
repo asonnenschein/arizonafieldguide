@@ -19,6 +19,8 @@
   "dependencies": {
     "good": "^6.4.0",
     "good-console": "^5.1.0",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
     "hapi": "^11.0.2",
     "inert": "^3.1.0"
   }

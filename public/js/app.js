@@ -20,7 +20,7 @@
   function configure ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/:city', {
-        templateUrl: 'dist/templates/field-guide.html',
+        templateUrl: 'public/templates/field-guide.html',
         controller: 'FieldGuideController'
       })
       .otherwise({
