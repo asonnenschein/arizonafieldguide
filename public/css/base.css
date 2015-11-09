@@ -3,17 +3,31 @@
 }
 html,
 body {
-  background-color: #333333;
+  background-color: #181533;
+}
+.Pascal {
+  font-family: "Pascal";
+  font-weight: normal;
+  font-style: normal;
 }
 .container {
   margin: 0 auto;
 }
-.container .header {
+.container .header h1 {
   color: #FFFFFF;
   width: 100%;
   text-align: center;
   border-bottom: none;
   padding: 2px;
+  font-family: "Pascal";
+}
+.container .header h2 {
+  color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+  border-bottom: none;
+  padding: 2px;
+  font-family: "Pascal";
 }
 .container .angular-leaflet-map {
   width: 100%;
@@ -23,23 +37,32 @@ body {
   visibility: hidden;
 }
 .container .image {
+  width: 600px;
+  height: 600px;
   position: relative;
 }
 .container .image .image-controls {
   width: 100%;
   text-align: center;
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
+  font-family: "Pascal";
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #000000;
+  background-color: rgba(155, 155, 155, 0.2);
 }
 .container .image .image-controls .inner {
   display: inline-block;
 }
 .container .image .image-controls .inner.right {
   margin-right: 15px;
+  margin-top: 15px;
   float: right;
 }
 .container .image .image-controls .inner.left {
   margin-left: 15px;
+  margin-top: 15px;
   float: left;
 }
 .container .feature-image {

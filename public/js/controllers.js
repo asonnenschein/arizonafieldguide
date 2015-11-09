@@ -14,6 +14,7 @@
 
   function FieldGuideController ($scope, $routeParams, FeatureDataFactory) {
     var city = $routeParams.city;
+    $scope.city = city;
     FeatureDataFactory.setFilteredData(city);
   }
 
