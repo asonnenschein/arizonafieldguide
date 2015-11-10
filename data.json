@@ -10,7 +10,7 @@
       "properties": {
         "id": "1",
         "city": "tucson",
-        "title": "Amazon Motel",
+        "title": "Miracle Mile",
         "image": "/images/tucson/amazonmotel.jpg"
       }
     },
@@ -23,7 +23,7 @@
       "properties": {
         "id": "2",
         "city": "tucson",
-        "title": "Ghost Ranch Motor Lodge",
+        "title": "Miracle Mile",
         "image": "/images/tucson/ghostranch.jpg"
       }
     },
@@ -36,7 +36,7 @@
       "properties": {
         "id": "3",
         "city": "tucson",
-        "title": "Sparkle Cleaners",
+        "title": "Drachmann",
         "image": "/images/tucson/sparklecleaners.jpg"
       }
     },
@@ -49,7 +49,7 @@
       "properties": {
         "id": "4",
         "city": "tucson",
-        "title": "Wayward Winds Lodge",
+        "title": "Miracle Mile",
         "image": "/images/tucson/waywardwinds.jpg"
       }
     }

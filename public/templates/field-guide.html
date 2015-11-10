@@ -1,24 +1,19 @@
 <div class="row">
-
     <div class="header" ng-controller="FieldGuideController">
         <h2>Arizona Field Guide</h2>
         <h1>{{city}}</h1>
     </div>
-
 </div>
 
 <div class="row">
-
-    <div class="column">
+    <div class="map">
         <div ng-controller="MapController">
             <leaflet geojson="geojson"></leaflet>
         </div>
     </div>
-
-    <div class="column">
+    <div class="feature-content">
         <div ng-controller="ContentController">
             <active-feature></active-feature>
         </div>
     </div>
-
 </div>

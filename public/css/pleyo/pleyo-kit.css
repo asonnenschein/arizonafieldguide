@@ -1,0 +1,28 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3122424, 2015-11-09T23:51:38-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Pleyo by Tour De Force
+ * URL: http://www.myfonts.com/fonts/tdf/pleyo/regular/
+ * Copyright: Copyright (c) 2015 by Dusan Jelesijevic &amp; Tour de Force Font Foundry. All rights reserved.
+ * Licensed pageviews: 10,000
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3122424
+ * 
+ * © 2015 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2fa4f8");
+
+  
+@font-face {font-family: 'Pleyo';src: url('webfonts/2FA4F8_0_0.eot');src: url('webfonts/2FA4F8_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2FA4F8_0_0.woff2') format('woff2'),url('webfonts/2FA4F8_0_0.woff') format('woff'),url('webfonts/2FA4F8_0_0.ttf') format('truetype');}
+ 
