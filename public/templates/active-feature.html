@@ -2,7 +2,15 @@
     <div class="title">{{feature.properties.title}}</div>
     <img src={{feature.properties.image}} class="feature-image">
     <div class="image-controls">
-        <button class="inner left" ng-click="previousFeature()">&larr;</button>
-        <button class="inner right" ng-click="nextFeature()">&rarr;</button>
+        <div class="inner left">
+            <button class="btn btn-default" ng-click="previousFeature()">
+                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="inner right">
+            <button class="btn btn-default" ng-click="nextFeature()">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+            </button>
+        </div>
     </div>
 </div>

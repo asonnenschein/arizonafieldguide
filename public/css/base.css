@@ -35,7 +35,7 @@ body {
   padding: 2px;
   font-family: "Pleyo";
   margin-bottom: 0;
-  margin-top: 0;
+  margin-top: 10px;
   font-size: 20px;
 }
 .container .map .angular-leaflet-map {
@@ -49,8 +49,8 @@ body {
   position: relative;
 }
 .container .feature-content .image .title {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 100%;
   text-align: center;
   font-family: "Pleyo";
@@ -64,9 +64,27 @@ body {
   width: 100%;
   height: auto;
 }
+.container .feature-content .image .image-controls {
+  width: 100%;
+  bottom: 4px;
+  position: absolute;
+  display: inline-block;
+}
 .container .feature-content .image .image-controls .inner.right {
+  padding: 4px;
   float: right;
 }
+.container .feature-content .image .image-controls .inner.right .btn {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-radius: 2px;
+}
 .container .feature-content .image .image-controls .inner.left {
+  padding: 4px;
   float: left;
+}
+.container .feature-content .image .image-controls .inner.left .btn {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-radius: 2px;
 }
