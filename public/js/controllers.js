@@ -33,20 +33,17 @@
   function MapController ($scope, $routeParams, leafletData, FeatureDataFactory, ActiveFeatureService) {
     angular.extend($scope, {
       defaults: {
-          tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-          maxZoom: 14,
-          path: {
-              weight: 10,
-              color: '#800000',
-              opacity: 1
-          }
+        tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        tileLayerOptions: {
+          detectRetina: true
+        }
       },
       geojson: {
         data: FeatureDataFactory.getFilteredData(),
         pointToLayer: function (feature, latlng) {
           var marker = new L.marker(latlng, {icon: L.icon({
-            iconUrl: '/assets/images/marker.png',
-            iconSize: [38, 95]
+            iconUrl: '/assets/images/marker-small.png',
+            iconAnchor: [0, 10]
           })});
           marker.on('click', function () {
             ActiveFeatureService.setActiveFeature(this.feature);
@@ -75,6 +72,26 @@
 
       map.on('resize', function () {
         map.fitBounds(latlngs, {padding: [50, 50]});
+      });
+
+      $scope.$on('activefeature:updated', function (event, data) {
+        map.eachLayer(function (layer) {
+          if (layer.hasOwnProperty("feature")) {
+            if (layer.feature.properties.id === data.properties.id) {
+              layer.setIcon(L.icon({
+                iconUrl: '/assets/images/marker-large.png',
+                iconAnchor: [0, 20]
+              }));
+              map.fitBounds([layer.getLatLng()], {maxZoom: 15});
+            }
+            else {
+              layer.setIcon(L.icon({
+                iconUrl: '/assets/images/marker-small.png',
+                iconAnchor: [0, 10]
+              }));
+            }
+          }
+        });
       });
 
     });
