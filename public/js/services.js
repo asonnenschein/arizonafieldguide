@@ -30,11 +30,13 @@
     }
 
     function setFilteredData (city) {
-      filteredData = {
-        "type": featureData.type,
-        "features": featureData.features.filter(function (feature) {
-          return feature.properties.city.toLowerCase() === city.toLowerCase();
-        })
+      if (city) {
+        filteredData = {
+          "type": featureData.type,
+          "features": featureData.features.filter(function (feature) {
+            return feature.properties.city.toLowerCase() === city.toLowerCase();
+          })
+        }
       }
     }
 

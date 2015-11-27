@@ -20,6 +20,21 @@
 
   angular
     .module('azFieldGuide')
+    .controller('HomeController', [
+      '$scope',
+      '$routeParams',
+      'FeatureDataFactory',
+      HomeController
+    ])
+  ;
+
+  function HomeController ($scope, $routeParams, FeatureDataFactory) {
+    var data = FeatureDataFactory.getFeatureData();
+    console.log(data);
+  }
+
+  angular
+    .module('azFieldGuide')
     .controller('MapController', [
       '$scope',
       '$routeParams',

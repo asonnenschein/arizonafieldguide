@@ -19,12 +19,16 @@
 
   function configure ($routeProvider, $locationProvider) {
     $routeProvider
+      .when('/', {
+        templateUrl: 'public/templates/home.html',
+        controller: 'HomeController'
+      })
       .when('/:city', {
         templateUrl: 'public/templates/field-guide.html',
         controller: 'FieldGuideController'
       })
       .otherwise({
-        redirectTo: '/tucson'
+        redirectTo: '/'
       })
     ;
     $locationProvider.html5Mode(false);
